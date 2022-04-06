@@ -11,9 +11,15 @@ class RegistroEmpresa : AppCompatActivity() {
         setContentView(R.layout.activity_registro_empresa)
 
         var btnVolver = findViewById<Button>(R.id.btnVolver)
+        var btnContinuar = findViewById<Button>(R.id.btnContinuar)
 
         btnVolver.setOnClickListener {
             val intent: Intent = Intent(this, RegistroUsuario::class.java)
+            startActivity(intent)
+        }
+
+        btnContinuar.setOnClickListener {
+            val intent: Intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 

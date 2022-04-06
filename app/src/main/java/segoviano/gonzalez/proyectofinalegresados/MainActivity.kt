@@ -48,7 +48,6 @@ class MainActivity : AppCompatActivity() {
         var btnCrearCV = findViewById<Button>(R.id.buttonCrearCV)
         var btnPublicarEmpleo = findViewById<Button>(R.id.buttonPublicarEmpleo)
 
-
         btnCrearCV.setOnClickListener {
             val intent: Intent = Intent(this, crear_cv::class.java)
             startActivity(intent)

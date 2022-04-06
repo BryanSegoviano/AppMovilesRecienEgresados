@@ -53,31 +53,32 @@
         android:layout_marginRight="30dp"
         android:layout_marginBottom="5dp">
     </LinearLayout>
+
     <EditText
         android:id="@+id/editTextTextPersonName"
-        android:padding="8dp"
         android:layout_width="147dp"
         android:layout_height="43dp"
-        android:background="@drawable/custom_input"
         android:layout_marginStart="52dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/custom_input"
         android:ems="10"
         android:hint="Nombre..."
         android:inputType="textPersonName"
+        android:padding="8dp"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <EditText
         android:id="@+id/editTextTextPersonName2"
-        android:padding="8dp"
         android:layout_width="147dp"
         android:layout_height="43dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/custom_input"
-        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Apellido..."
         android:inputType="textPersonName"
+        android:padding="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName"
