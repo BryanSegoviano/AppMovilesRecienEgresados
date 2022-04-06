@@ -1,7 +1,9 @@
 package segoviano.gonzalez.proyectofinalegresados
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
+import android.widget.Button
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -42,6 +44,19 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        var btnCrearCV = findViewById<Button>(R.id.buttonCrearCV)
+        var btnPublicarEmpleo = findViewById<Button>(R.id.buttonPublicarEmpleo)
+
+
+        btnCrearCV.setOnClickListener {
+            val intent: Intent = Intent(this, crear_cv::class.java)
+            startActivity(intent)
+        }
+        btnPublicarEmpleo.setOnClickListener {
+            val intent: Intent = Intent(this, publicar_empleo::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

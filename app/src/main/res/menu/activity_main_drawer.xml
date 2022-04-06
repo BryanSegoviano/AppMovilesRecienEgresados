@@ -6,15 +6,36 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_home" />
+            android:icon="@drawable/ic_baseline_person_24"
+            android:title="@string/menu_perfil"/>
         <item
             android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
+            android:icon="@drawable/ic_baseline_email_24"
+            android:title="@string/menu_mensajes" />
         <item
             android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:icon="@drawable/ic_baseline_business_center_24"
+            android:title="@string/menu_empleos" />
+        <item
+            android:id="@+id/nav_nuevasVacantes"
+            android:icon="@drawable/ic_baseline_new_releases_24"
+            android:title="@string/menu_nuevas_vacantes" />
+        <item
+            android:id="@+id/nav_empleosDestacados"
+            android:icon="@drawable/ic_baseline_stars_24"
+            android:title="@string/menu_empleos_destacados" />
+        <item
+            android:id="@+id/nav_favoritos"
+            android:icon="@drawable/ic_baseline_favorite_24"
+            android:title="@string/menu_favoritos" />
+        <item
+            android:id="@+id/nav_preguntasFrecuentes"
+            android:icon="@drawable/ic_baseline_help_24"
+            android:title="@string/menu_preguntas_frecuentes" />
+        <item
+            android:id="@+id/nav_cerrarSesion"
+            android:icon="@drawable/ic_baseline_power_settings_new_24"
+            android:title="@string/menu_cerrar_sesion" />
+
     </group>
 </menu>
