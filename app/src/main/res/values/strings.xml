@@ -8,8 +8,8 @@
     <string name="action_settings">Settings</string>
 
     <string name="menu_perfil">Perfil</string>
-    <string name="menu_mensajes">Mensajes</string>
-    <string name="menu_empleos">Empleos</string>
+    <string name="menu_empleo">Empleos</string>
+    <string name="menu_mensaje">Mensajes</string>
     <string name="menu_nuevas_vacantes">Nuevas vacantes</string>
     <string name="menu_empleos_destacados">Empleos destacados</string>
     <string name="menu_favoritos">Favoritos</string>
