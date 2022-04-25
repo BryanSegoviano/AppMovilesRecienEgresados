@@ -24,8 +24,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        getWindow().getDecorView().setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

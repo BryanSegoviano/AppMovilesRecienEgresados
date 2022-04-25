@@ -8,6 +8,7 @@ import android.widget.ListView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import segoviano.gonzalez.proyectofinalegresados.R
 import segoviano.gonzalez.proyectofinalegresados.databinding.FragmentGalleryBinding
 import segoviano.gonzalez.proyectofinalegresados.ui.Empleo
 
@@ -45,19 +46,14 @@ class GalleryFragment : Fragment() {
     }
 
     fun llenarEmpleos(){
-        val empleoUno = Empleo(1, "Ingeniero en Software", "3 años o mas", "Ciudad Obregón, Sonora", "Java, SQL, .Net", "Lunes a Viernes, 8:00AM a 5:00PM", "Desarrollo de aplicaciones moviles", 12000f)
-//        val peliculaDos = Pelicula(1, getString(R.string.peliDos), getString(R.string.peliDosSinop), "128", R.drawable.civilwar)
-//        val peliculaTres = Pelicula(2, getString(R.string.peliTres), getString(R.string.peliTresSinop), "122", R.drawable.joker)
-//        val peliculaCuatro = Pelicula(3, getString(R.string.peliCuatro), getString(R.string.peliCuatroSinop), "100", R.drawable.nemo)
-//        val peliculaCinco = Pelicula(5, getString(R.string.peliCinco), getString(R.string.peliCincoSinop), "132", R.drawable.shazam)
-//        val peliculaSeis = Pelicula(6, getString(R.string.peliSeis), getString(R.string.peliSeisSinop), "151", R.drawable.wonderwoman)
-//        val peliculaSiete = Pelicula(7, getString(R.string.peliSiete), getString(R.string.peliSieteSinop), "99", R.drawable.sonic)
-        empleos.add(empleoUno)
-//        peliculas.add(peliculaDos)
-//        peliculas.add(peliculaTres)
-//        peliculas.add(peliculaCuatro)
-//        peliculas.add(peliculaCinco)
-//        peliculas.add(peliculaSeis)
-//        peliculas.add(peliculaSiete)
+        val empleo1 = Empleo(1, R.drawable.logo_oracle,"Ingeniero en Software", "3 años o mas", "Ciudad Obregón, Sonora", "Java, SQL, .Net", "Lunes a Viernes, 8:00AM a 5:00PM", "Desarrollo de aplicaciones moviles en empresa de alto renobre", 12000f)
+        val empleo2 = Empleo(2, R.drawable.logo_ibm,"Ingeniero en Software", "3 años o mas", "Ciudad Obregón, Sonora", "Java, SQL, .Net", "Lunes a Viernes, 8:00AM a 5:00PM", "Desarrollo de computadoras para escritorio", 12000f)
+        val empleo3 = Empleo(3, R.drawable.logo_facebook,"Ingeniero en Software", "3 años o mas", "Ciudad Obregón, Sonora", "Java, SQL, .Net", "Lunes a Viernes, 8:00AM a 5:00PM", "Desarrollo de perfiles falsos para trolear por internet", 12000f)
+        val empleo4 = Empleo(4, R.drawable.logo_google_nuevo,"Ingeniero en Software", "3 años o mas", "Ciudad Obregón, Sonora", "Java, SQL, .Net", "Lunes a Viernes, 8:00AM a 5:00PM", "Desarrollo de software para espiar a tus usuarios", 12000f)
+
+        empleos.add(empleo1)
+        empleos.add(empleo2)
+        empleos.add(empleo3)
+        empleos.add(empleo4)
     }
 }

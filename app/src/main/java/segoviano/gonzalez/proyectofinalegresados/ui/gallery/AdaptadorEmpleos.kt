@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import segoviano.gonzalez.proyectofinalegresados.R
+import segoviano.gonzalez.proyectofinalegresados.activity_empleo
 import segoviano.gonzalez.proyectofinalegresados.ui.Empleo
 
 class AdaptadorEmpleos: BaseAdapter {
@@ -36,18 +38,16 @@ class AdaptadorEmpleos: BaseAdapter {
         var vista = inflador.inflate(R.layout.empleo_view, null)
 
         var iv_img: ImageView = vista.findViewById(R.id.img_view)
-        var tv_nombre: TextView = vista.findViewById(R.id.tv_nombre)
-        var tv_duracion: TextView = vista.findViewById(R.id.tv_duracion)
+        var tv_desc: TextView = vista.findViewById(R.id.tv_desc)
 
         var empleo: Empleo = this.empleos[p0]
-        iv_img.setImageResource(empleo.imagen)
-        tv_nombre.setText(empleo.nombre)
+        iv_img.setImageResource(empleo.img)
+        tv_desc.setText(empleo.descripcion)
 
         vista.setOnClickListener{
-            val intent: Intent = Intent(this.context, Activity_empleo::class.java)
-            intent.putExtra("titulo", empleo.nombre)
-            intent.putExtra("sinopsis", empleo.sinopsis)
-            intent.putExtra("poster", empleo.imagen)
+            val intent: Intent = Intent(this.context, activity_empleo::class.java)
+            intent.putExtra("descripcion", empleo.descripcion)
+            intent.putExtra("logo", empleo.img)
             this.context.startActivity(intent)
         }
 
