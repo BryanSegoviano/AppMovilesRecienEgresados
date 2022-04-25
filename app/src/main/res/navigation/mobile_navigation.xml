@@ -14,12 +14,12 @@
     <fragment
         android:id="@+id/nav_gallery"
         android:name="segoviano.gonzalez.proyectofinalegresados.ui.gallery.GalleryFragment"
-        android:label="@string/menu_mensajes"
+        android:label="@string/menu_empleo"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="segoviano.gonzalez.proyectofinalegresados.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_empleos"
+        android:label="@string/menu_mensaje"
         tools:layout="@layout/fragment_slideshow" />
 </navigation>

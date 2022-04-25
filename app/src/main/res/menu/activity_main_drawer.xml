@@ -10,12 +10,12 @@
             android:title="@string/menu_perfil"/>
         <item
             android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_baseline_email_24"
-            android:title="@string/menu_mensajes" />
+            android:icon="@drawable/ic_baseline_business_center_24"
+            android:title="@string/menu_empleo" />
         <item
             android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_baseline_business_center_24"
-            android:title="@string/menu_empleos" />
+            android:icon="@drawable/ic_baseline_email_24"
+            android:title="@string/menu_mensaje" />
         <item
             android:id="@+id/nav_nuevasVacantes"
             android:icon="@drawable/ic_baseline_new_releases_24"
