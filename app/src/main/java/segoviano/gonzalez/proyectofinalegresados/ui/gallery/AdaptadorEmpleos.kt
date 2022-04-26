@@ -46,7 +46,14 @@ class AdaptadorEmpleos: BaseAdapter {
 
         vista.setOnClickListener{
             val intent: Intent = Intent(this.context, activity_empleo::class.java)
+            intent.putExtra("puesto", empleo.puesto)
+            intent.putExtra("experiencia", empleo.experiencia)
+            intent.putExtra("ubicacion", empleo.ubicacion)
+            intent.putExtra("requisitos", empleo.requisitos)
+            intent.putExtra("horario", empleo.horario)
             intent.putExtra("descripcion", empleo.descripcion)
+            intent.putExtra("sueldo", empleo.sueldo)
+
             intent.putExtra("logo", empleo.img)
             this.context.startActivity(intent)
         }

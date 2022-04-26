@@ -7,7 +7,7 @@
     tools:context=".activity_empleo">
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/img_logo"
         android:layout_width="202dp"
         android:layout_height="138dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -19,45 +19,46 @@
         app:srcCompat="@drawable/logo_oracle" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="110dp"
+        android:id="@+id/tv_puesto"
+        android:layout_width="280dp"
         android:layout_height="32dp"
+        android:gravity="center"
         android:text="Puesto"
         android:textSize="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintTop_toBottomOf="@+id/img_logo"
         app:layout_constraintVertical_bias="0.034" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/tv_exp"
         android:layout_width="150dp"
-        android:layout_height="33dp"
+        android:layout_height="43dp"
         android:layout_marginStart="36dp"
         android:text="Experiencia"
         android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintTop_toBottomOf="@+id/img_logo"
         app:layout_constraintVertical_bias="0.125" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/tv_ubicacion"
         android:layout_width="150dp"
-        android:layout_height="33dp"
+        android:layout_height="43dp"
         android:text="Ubicación"
         android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toEndOf="@+id/textView10"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintStart_toEndOf="@+id/tv_exp"
+        app:layout_constraintTop_toBottomOf="@+id/img_logo"
         app:layout_constraintVertical_bias="0.125" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/tv_requisitos"
         android:layout_width="337dp"
         android:layout_height="106dp"
         android:text="Requisitos"
@@ -66,24 +67,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/tv_puesto"
         app:layout_constraintVertical_bias="0.161" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/tv_horario"
         android:layout_width="150dp"
-        android:layout_height="33dp"
+        android:layout_height="43dp"
         android:text="Horario"
         android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.137"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12"
+        app:layout_constraintTop_toBottomOf="@+id/tv_requisitos"
         app:layout_constraintVertical_bias="0.056" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/tv_desc"
         android:layout_width="337dp"
         android:layout_height="75dp"
         android:text="Descripcion"
@@ -92,20 +93,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView13"
+        app:layout_constraintTop_toBottomOf="@+id/tv_horario"
         app:layout_constraintVertical_bias="0.083" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/tv_sueldo"
         android:layout_width="150dp"
-        android:layout_height="33dp"
+        android:layout_height="43dp"
         android:text="Sueldo"
         android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.137"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView14"
+        app:layout_constraintTop_toBottomOf="@+id/tv_desc"
         app:layout_constraintVertical_bias="0.089" />
 
 
