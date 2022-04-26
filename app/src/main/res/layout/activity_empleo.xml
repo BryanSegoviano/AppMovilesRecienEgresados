@@ -4,110 +4,158 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/azulOscuroFondo"
     tools:context=".activity_empleo">
+
+    <Button
+        android:id="@+id/btnVolver"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:drawableRight="@drawable/ic_outline_play_arrow_24"
+        android:fontFamily="@font/seguisym"
+        android:rotation="180"
+        app:layout_constraintBottom_toTopOf="@+id/img_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.120000005" />
 
     <ImageView
         android:id="@+id/img_logo"
         android:layout_width="202dp"
         android:layout_height="138dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.026"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/logo_oracle" />
 
     <TextView
         android:id="@+id/tv_puesto"
-        android:layout_width="280dp"
+        android:layout_width="320dp"
         android:layout_height="32dp"
+        android:textColor="@color/white"
+        android:layout_marginTop="16dp"
         android:gravity="center"
-        android:text="Puesto"
+        android:text="Ingeniero en Software"
         android:textSize="24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_logo"
-        app:layout_constraintVertical_bias="0.034" />
+        app:layout_constraintTop_toBottomOf="@+id/img_logo" />
 
     <TextView
         android:id="@+id/tv_exp"
-        android:layout_width="150dp"
+        android:layout_width="320dp"
         android:layout_height="43dp"
-        android:layout_marginStart="36dp"
-        android:text="Experiencia"
+        android:textColor="@color/white"
+        android:layout_marginTop="16dp"
+        android:text="Experiencia de 3 años o mas"
+        android:textAlignment="center"
         android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_logo"
-        app:layout_constraintVertical_bias="0.125" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_puesto"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/tv_ubicacion"
-        android:layout_width="150dp"
+        android:layout_width="320dp"
         android:layout_height="43dp"
-        android:text="Ubicación"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/white"
+        android:text="Austin, Texas."
+        android:textAlignment="center"
         android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toEndOf="@+id/tv_exp"
-        app:layout_constraintTop_toBottomOf="@+id/img_logo"
-        app:layout_constraintVertical_bias="0.125" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_horario" />
 
     <TextView
         android:id="@+id/tv_requisitos"
-        android:layout_width="337dp"
-        android:layout_height="106dp"
-        android:text="Requisitos"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textStyle="bold"
+        android:text="Java, SQL, .Net"
+        android:textColor="@color/white"
+        android:textAlignment="center"
         android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_puesto"
-        app:layout_constraintVertical_bias="0.161" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_exp" />
 
     <TextView
         android:id="@+id/tv_horario"
-        android:layout_width="150dp"
+        android:layout_width="320dp"
         android:layout_height="43dp"
-        android:text="Horario"
+        android:layout_marginTop="16dp"
+        android:text="Lunes a Viernes, 8:00AM a 5:00PM"
+        android:textColor="@color/white"
+        android:textAlignment="center"
         android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.137"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_requisitos"
-        app:layout_constraintVertical_bias="0.056" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/tv_desc"
-        android:layout_width="337dp"
+        android:layout_width="320dp"
         android:layout_height="75dp"
-        android:text="Descripcion"
+        android:layout_marginTop="16dp"
+        android:textStyle="bold"
+        android:text="Desarrollo de aplicaciones moviles en empresa de alto renombre"
+        android:textAlignment="center"
         android:textSize="18dp"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_horario"
-        app:layout_constraintVertical_bias="0.083" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_ubicacion"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/tv_sueldo"
-        android:layout_width="150dp"
+        android:layout_width="320dp"
         android:layout_height="43dp"
-        android:text="Sueldo"
+        android:layout_marginTop="16dp"
+        android:text="12000"
+        android:textAlignment="center"
         android:textSize="18dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.137"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_desc"
-        app:layout_constraintVertical_bias="0.089" />
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btnPostular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/efecto_click"
+        android:fontFamily="@font/seguisym"
+        app:backgroundTint="@null"
+        android:text="Postularme"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_sueldo"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -42,7 +42,7 @@ class AdaptadorEmpleos: BaseAdapter {
 
         var empleo: Empleo = this.empleos[p0]
         iv_img.setImageResource(empleo.img)
-        tv_desc.setText(empleo.descripcion)
+        tv_desc.setText(empleo.puesto)
 
         vista.setOnClickListener{
             val intent: Intent = Intent(this.context, activity_empleo::class.java)
