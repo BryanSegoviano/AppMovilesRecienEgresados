@@ -14,16 +14,16 @@
             android:title="@string/menu_empleo" />
         <item
             android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_baseline_email_24"
-            android:title="@string/menu_mensaje" />
+            android:icon="@drawable/ic_baseline_stars_24"
+            android:title="@string/menu_postulaciones" />
         <item
             android:id="@+id/nav_nuevasVacantes"
             android:icon="@drawable/ic_baseline_new_releases_24"
             android:title="@string/menu_nuevas_vacantes" />
         <item
             android:id="@+id/nav_empleosDestacados"
-            android:icon="@drawable/ic_baseline_stars_24"
-            android:title="@string/menu_empleos_destacados" />
+            android:icon="@drawable/ic_baseline_email_24"
+            android:title="@string/menu_mensajes" />
         <item
             android:id="@+id/nav_favoritos"
             android:icon="@drawable/ic_baseline_favorite_24"
