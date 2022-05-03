@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "690015719750",
+    "project_id": "reciesados",
+    "storage_bucket": "reciesados.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:690015719750:android:cdcb47fa068d5a4aa49547",
+        "android_client_info": {
+          "package_name": "segoviano.gonzalez.proyectofinalegresados"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "690015719750-u026flb0rdbvq19a36oiokd3qjja0j4p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAc3P3HXkNgL5OefsTN9c2EiAJOLfD9idQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "690015719750-u026flb0rdbvq19a36oiokd3qjja0j4p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
