@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoFinalEgresados">
         <activity
+            android:name=".RecuperarContrasenia"
+            android:exported="false" />
+        <activity
             android:name=".activity_empleo"
             android:exported="false" />
         <activity

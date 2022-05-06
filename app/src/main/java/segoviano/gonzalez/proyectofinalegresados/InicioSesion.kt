@@ -25,6 +25,7 @@ class InicioSesion : AppCompatActivity() {
         val btnIniciarSesion : Button = findViewById(R.id.btnContinuar)
         var btnRegistrar = findViewById<Button>(R.id.btnRegistrar)
         var btnOmitir = findViewById<Button>(R.id.btnOmitir)
+        var btnOlvideContra = findViewById<Button>(R.id.btnOlvidarContrasenia)
 
         btnIniciarSesion.setOnClickListener {
             var correo :String = et_correo.text.toString().trim();
@@ -55,6 +56,10 @@ class InicioSesion : AppCompatActivity() {
         }
         btnOmitir.setOnClickListener {
             val intent: Intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+        btnOlvideContra.setOnClickListener {
+            val intent: Intent = Intent(this, RecuperarContrasenia::class.java)
             startActivity(intent)
         }
     }
