@@ -73,7 +73,8 @@ class MainActivity : AppCompatActivity() {
         }
         btnCerrarSesion.setOnClickListener {
             auth.signOut()
-            finish()
+            val intent: Intent = Intent(this, InicioSesion::class.java)
+            startActivity(intent)
         }
     }
 
