@@ -20,33 +20,46 @@ class InicioSesion : AppCompatActivity() {
         setContentView(R.layout.activity_inicio_sesion)
 
         auth = Firebase.auth
-        val et_correo : EditText = findViewById(R.id.txtNombreUsuario)
-        val et_contra : EditText = findViewById(R.id.txtContrasenia)
-        val btnIniciarSesion : Button = findViewById(R.id.btnContinuar)
+        val et_correo: EditText = findViewById(R.id.txtNombreUsuario)
+        val et_contra: EditText = findViewById(R.id.txtContrasenia)
+        val btnIniciarSesion: Button = findViewById(R.id.btnContinuar)
         var btnRegistrar = findViewById<Button>(R.id.btnRegistrar)
         var btnOmitir = findViewById<Button>(R.id.btnOmitir)
         var btnOlvideContra = findViewById<Button>(R.id.btnOlvidarContrasenia)
 
         btnIniciarSesion.setOnClickListener {
-            var correo :String = et_correo.text.toString().trim();
-            var contra :String = et_contra.text.toString().trim();
-            auth.signInWithEmailAndPassword(correo, contra)
-                .addOnCompleteListener(this) { task ->
-                    if (task.isSuccessful) {
-                        // Sign in success, update UI with the signed-in user's information
-                        //Log.d(TAG, "signInWithEmail:success")
-                        //val user = auth.currentUser
-                        //updateUI(user)
-                        val intent: Intent = Intent(this, MainActivity::class.java)
-                        startActivity(intent)
-                    } else {
-                        // If sign in fails, display a message to the user.
-                        Log.w("signInWithEmail:failure", task.exception)
-                        Toast.makeText(baseContext, task.exception?.message,
-                            Toast.LENGTH_SHORT).show()
-                        //updateUI(null)
+            var correo: String = et_correo.text.toString().trim();
+            var contra: String = et_contra.text.toString().trim();
+            if (correo.isNullOrEmpty() || contra.isNullOrEmpty()) {
+                Toast.makeText(this, "Por favor rellenar todos los campos", Toast.LENGTH_SHORT).show()
+            } else {
+                auth.signInWithEmailAndPassword(correo, contra)
+                    .addOnCompleteListener(this) { task ->
+                        //if btnIniciarSesion()
+                        if (task.isSuccessful) {
+                            // Sign in success, update UI with the signed-in user's information
+                            //Log.d(TAG, "signInWithEmail:success")
+                            //val user = auth.currentUser
+                            //updateUI(user)
+                            Toast.makeText(this, "Bienvenido", Toast.LENGTH_SHORT).show()
+                            val intent: Intent = Intent(this, MainActivity::class.java)
+                            startActivity(intent)
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w("signInWithEmail:failure", task.exception)
+                            Toast.makeText(
+                                this,
+                                "Error al validar credenciales",
+                                Toast.LENGTH_SHORT
+                            )
+                                .show()
+                            Toast.makeText(baseContext, task.exception?.message, Toast.LENGTH_SHORT)
+                                .show()
+                            //updateUI(null)
+                        }
                     }
-                }
+            }
+
 
         }
 

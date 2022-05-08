@@ -21,23 +21,31 @@ class RecuperarContrasenia : AppCompatActivity() {
         auth = Firebase.auth
         var btnVolver = findViewById<Button>(R.id.btnVolverMenu)
         val et_correo_olv: EditText = findViewById(R.id.txtCorreoRecuperacion)
-        val btn_enviar : Button = findViewById(R.id.btnEnviarCorreo)
+        val btn_enviar: Button = findViewById(R.id.btnEnviarCorreo)
 
         btn_enviar.setOnClickListener {
             var correoOlvidado: String = et_correo_olv.text.toString().trim()
-
-            auth.sendPasswordResetEmail(correoOlvidado)
-                .addOnCompleteListener (this){ task->
-                    if (task.isSuccessful){
-                        Toast.makeText(this, "Se ha enviado el correo de recuperación", Toast.LENGTH_SHORT).show()
-                    } else{
-                        Toast.makeText(this, "No se envio el correo", Toast.LENGTH_SHORT).show()
+            if (correoOlvidado.isNullOrEmpty()) {
+                Toast.makeText(this, "Favor de llenar el campo Correo", Toast.LENGTH_SHORT).show()
+            } else {
+                auth.sendPasswordResetEmail(correoOlvidado)
+                    .addOnCompleteListener(this) { task ->
+                        if (task.isSuccessful) {
+                            Toast.makeText(
+                                this,
+                                "Se ha enviado el correo de recuperación",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        } else {
+                            Toast.makeText(this, "No se envio el correo", Toast.LENGTH_SHORT).show()
+                        }
                     }
-                }
+            }
+
         }
 
         btnVolver.setOnClickListener {
-            val intent: Intent = Intent(this, RegistroUsuario::class.java)
+            val intent: Intent = Intent(this, InicioSesion::class.java)
             startActivity(intent)
         }
     }
