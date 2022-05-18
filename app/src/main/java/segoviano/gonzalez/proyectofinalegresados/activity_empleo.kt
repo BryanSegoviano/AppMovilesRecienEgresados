@@ -21,6 +21,9 @@ class activity_empleo : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_empleo)
 
+        val database = Firebase.database
+        val empleosBD = database.getReference("empleos")
+
         var btnPostular = findViewById<Button>(R.id.btnPostular)
         var btnVolver = findViewById<Button>(R.id.btnVolver)
 
@@ -62,8 +65,7 @@ class activity_empleo : AppCompatActivity() {
             val usuario = auth.currentUser
             val myRef = database.getReference("usuarios")
             var puesto : String = bundle!!.getString("puesto", "")
-            myRef.child(usuario?.uid.toString()).child("postulaciones").setValue(puesto.toString().trim())
-
+            myRef.child(usuario?.uid.toString()).child("postulaciones").push().setValue(puesto.toString().trim())
             Toast.makeText(this, "¡POSTULADO CORRECTAMENTE!", Toast.LENGTH_LONG).show()
             finish()
         }

@@ -6,6 +6,7 @@ import android.view.Menu
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -17,9 +18,13 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import segoviano.gonzalez.proyectofinalegresados.databinding.ActivityMainBinding
+import segoviano.gonzalez.proyectofinalegresados.ui.Empleo
 
 class MainActivity : AppCompatActivity() {
 
@@ -62,6 +67,7 @@ class MainActivity : AppCompatActivity() {
 
         val database = Firebase.database
         val myRef = database.getReference("usuarios")
+
         if(usuario != null){
         myRef.child(usuario?.uid.toString()).get().addOnSuccessListener {
             if(it.exists()){
@@ -71,9 +77,6 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-
-
-
 
         btnCrearCV.setOnClickListener {
             val intent: Intent = Intent(this, crear_cv::class.java)
@@ -93,8 +96,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.main, menu)
+
         return true
     }
+
+
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_main)

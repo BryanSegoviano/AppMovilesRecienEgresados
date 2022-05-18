@@ -9,6 +9,7 @@ data class Empleo(
     val requisitos: String,
     val horario: String,
     val descripcion: String,
-    val sueldo: Float
+    val sueldo: Float,
+    val empresa: String
 ) {
 }
