@@ -22,7 +22,6 @@ class publicar_empleo : AppCompatActivity() {
         auth = Firebase.auth
         val database = Firebase.database
         val myRef = database.getReference("empleos")
-        val myRefDos = database.getReference("empresa")
 
         val btnRegresar = findViewById<Button>(R.id.btnVuelve)
         val btnFinalizar = findViewById<Button>(R.id.btnFinalizar)
@@ -45,20 +44,18 @@ class publicar_empleo : AppCompatActivity() {
             var descripcion: String = etdescripcion.text.toString().trim()
             var sueldo: String = etsueldo.text.toString().trim()
 
-            val empresa = auth.currentUser
-
             if (puesto.isNotEmpty() && experiencia.isNotEmpty()
                 && ubicacion.isNotEmpty() && requisitos.isNotEmpty()
                 && descripcion.isNotEmpty()
                 && sueldo.isNotEmpty()
             ) {
-                myRef.child(empresa?.uid.toString()).child(puesto).child("puesto").setValue(puesto)
-                myRef.child(empresa?.uid.toString()).child(puesto).child("experiencia").setValue(experiencia)
-                myRef.child(empresa?.uid.toString()).child(puesto).child("ubicacion").setValue(ubicacion)
-                myRef.child(empresa?.uid.toString()).child(puesto).child("requisitos").setValue(requisitos)
-                myRef.child(empresa?.uid.toString()).child(puesto).child("horario").setValue(horario)
-                myRef.child(empresa?.uid.toString()).child(puesto).child("descripcion").setValue(descripcion)
-                myRef.child(empresa?.uid.toString()).child(puesto).child("sueldo").setValue(sueldo)
+                myRef.child(puesto).child("puesto").setValue(puesto)
+                myRef.child(puesto).child("experiencia").setValue(experiencia)
+                myRef.child(puesto).child("ubicacion").setValue(ubicacion)
+                myRef.child(puesto).child("requisitos").setValue(requisitos)
+                myRef.child(puesto).child("horario").setValue(horario)
+                myRef.child(puesto).child("descripcion").setValue(descripcion)
+                myRef.child(puesto).child("sueldo").setValue(sueldo)
             }
             val intent: Intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
