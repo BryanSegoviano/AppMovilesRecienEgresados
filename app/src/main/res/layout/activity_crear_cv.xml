@@ -52,55 +52,26 @@
         android:background="@drawable/custom_lineal_layout"
         android:layout_marginRight="30dp"
         android:layout_marginBottom="5dp">
+
     </LinearLayout>
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="147dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/custom_input"
-        android:ems="10"
-        android:hint="Nombre..."
-        android:inputType="textPersonName"
-        android:padding="8dp"
-        android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName2"
-        android:layout_width="147dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/custom_input"
-        android:ems="10"
-        android:hint="Apellido..."
-        android:inputType="textPersonName"
-        android:padding="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
-        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
-
-    <EditText
-        android:id="@+id/txtPuesto"
-        android:padding="8dp"
+        android:id="@+id/txtDireccion"
         android:layout_width="310dp"
         android:layout_height="43dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/custom_input"
-        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Dirección..."
         android:inputType="textPersonName"
+        android:padding="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <EditText
-        android:id="@+id/txtExperiencia"
+        android:id="@+id/txtCiudad"
         android:padding="8dp"
         android:layout_width="147dp"
         android:layout_height="43dp"
@@ -111,7 +82,7 @@
         android:hint="Ciudad..."
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPuesto" />
+        app:layout_constraintTop_toBottomOf="@+id/txtDireccion" />
 
     <EditText
         android:id="@+id/editTextTextPersonName5"
@@ -124,10 +95,40 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="Correo electr[onico..."
-        app:layout_constraintTop_toBottomOf="@+id/txtExperiencia" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCiudad" />
 
     <EditText
-        android:id="@+id/txtPuestoUbicacion"
+        android:id="@+id/txtHabilidades"
+        android:layout_width="310dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/custom_input"
+        android:hint="Habilidades"
+        android:inputType="textPersonName"
+        android:padding="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnFinalizarCv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtExperiencia"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/txtIdiomas"
+        android:layout_width="310dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/custom_input"
+        android:hint="Idiomas"
+        android:inputType="textPersonName"
+        android:padding="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnFinalizarCv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtHabilidades"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/txtTelefono"
         android:padding="8dp"
         android:layout_width="147dp"
         android:layout_height="43dp"
@@ -137,11 +138,11 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.289"
-        app:layout_constraintStart_toEndOf="@+id/txtExperiencia"
-        app:layout_constraintTop_toBottomOf="@+id/txtPuesto" />
+        app:layout_constraintStart_toEndOf="@+id/txtCiudad"
+        app:layout_constraintTop_toBottomOf="@+id/txtDireccion" />
 
     <EditText
-        android:id="@+id/txtRequisitos"
+        android:id="@+id/txtGrado"
         android:padding="8dp"
         android:layout_width="310dp"
         android:layout_height="43dp"
@@ -152,10 +153,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPuestoUbicacion" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTelefono" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName8"
+        android:id="@+id/txtEstudio"
         android:padding="8dp"
         android:layout_width="310dp"
         android:layout_height="43dp"
@@ -166,82 +167,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtRequisitos" />
+        app:layout_constraintTop_toBottomOf="@+id/txtGrado" />
 
     <EditText
-        android:id="@+id/txtHorario"
-        android:padding="8dp"
+        android:id="@+id/txtExperiencia"
         android:layout_width="310dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="20dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/custom_input"
-        android:hint="Institución educativa"
+        android:hint="Experiencia"
         android:inputType="textPersonName"
+        android:padding="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName8" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName10"
-        android:padding="8dp"
-        android:layout_width="170dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/custom_input"
-        android:hint="Del mes..."
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.215"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtHorario" />
-
-    <EditText
-        android:id="@+id/txtDescripcion"
-        android:padding="8dp"
-        android:layout_width="130dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/custom_input"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Año"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.183"
-        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName10"
-        app:layout_constraintTop_toBottomOf="@+id/txtHorario" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName12"
-        android:padding="8dp"
-        android:layout_width="170dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/custom_input"
-        android:hint="Al mes..."
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.215"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName10" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName13"
-        android:padding="8dp"
-        android:layout_width="130dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/custom_input"
-        android:ems="10"
-        android:hint="Año"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.169"
-        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName12"
-        app:layout_constraintTop_toBottomOf="@+id/txtDescripcion" />
+        app:layout_constraintTop_toBottomOf="@+id/txtEstudio" />
 
     <Button
-        android:id="@+id/btnFinalizar"
+        android:id="@+id/btnFinalizarCv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="?android:attr/selectableItemBackground"
@@ -250,10 +192,10 @@
         android:text="Finalizar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.937"
+        app:layout_constraintHorizontal_bias="0.88"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName13"
-        app:layout_constraintVertical_bias="0.328" />
+        app:layout_constraintTop_toBottomOf="@+id/txtExperiencia"
+        app:layout_constraintVertical_bias="0.87" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

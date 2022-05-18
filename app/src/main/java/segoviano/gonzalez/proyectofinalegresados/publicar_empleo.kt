@@ -3,7 +3,6 @@ package segoviano.gonzalez.proyectofinalegresados
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import com.google.firebase.auth.FirebaseAuth
@@ -24,13 +23,13 @@ class publicar_empleo : AppCompatActivity() {
         val myRef = database.getReference("empleos")
 
         val btnRegresar = findViewById<Button>(R.id.btnVuelve)
-        val btnFinalizar = findViewById<Button>(R.id.btnFinalizar)
+        val btnFinalizar = findViewById<Button>(R.id.btnFinalizarCv)
 
-        val etpuesto = findViewById<EditText>(R.id.txtPuesto)
-        val etexperiencia = findViewById<EditText>(R.id.txtExperiencia)
-        val etubicacion = findViewById<EditText>(R.id.txtPuestoUbicacion)
-        val etrequisito = findViewById<EditText>(R.id.txtRequisitos)
-        val ethorario = findViewById<EditText>(R.id.txtHorario)
+        val etpuesto = findViewById<EditText>(R.id.txtDireccion)
+        val etexperiencia = findViewById<EditText>(R.id.txtCiudad)
+        val etubicacion = findViewById<EditText>(R.id.txtTelefono)
+        val etrequisito = findViewById<EditText>(R.id.txtGrado)
+        val ethorario = findViewById<EditText>(R.id.txtInstitucion)
         val etdescripcion = findViewById<EditText>(R.id.txtDescripcion)
         val etsueldo = findViewById<EditText>(R.id.txtSueldo)
 
