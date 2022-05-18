@@ -11,6 +11,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import org.w3c.dom.Text
 import segoviano.gonzalez.proyectofinalegresados.ui.gallery.GalleryFragment
 
 class activity_empleo : AppCompatActivity() {
@@ -35,6 +36,7 @@ class activity_empleo : AppCompatActivity() {
         val txtHorario : TextView = findViewById(R.id.tv_horario)
         val txtDesc : TextView = findViewById(R.id.tv_desc)
         val txtSueldo : TextView = findViewById(R.id.tv_sueldo)
+        val txtNombreEmpresa: TextView = findViewById(R.id.tv_empresa)
 
         val bundle = intent.extras
 
@@ -47,8 +49,11 @@ class activity_empleo : AppCompatActivity() {
             var horarioPuesto : String = bundle.getString("horario", "")
             var descripcionPuesto : String = bundle.getString("descripcion", "")
             var sueldoPuesto : Float = bundle.getFloat("sueldo", )
+            var nombreEmpresa:String= bundle.getString("empresa","")
 
             img.setImageResource(logoEmpresa)
+
+            txtNombreEmpresa.setText(nombreEmpresa)
             txtPuesto.setText(puestoEmpresa)
             txtExperiencia.setText(experienciaPuesto)
             txtUbicacion.setText(ubicacionEmpresa)
@@ -56,7 +61,6 @@ class activity_empleo : AppCompatActivity() {
             txtHorario.setText(horarioPuesto)
             txtDesc.setText("Descripción: $descripcionPuesto")
             txtSueldo.setText("Salario: $$sueldoPuesto")
-
         }
 
         btnPostular.setOnClickListener {

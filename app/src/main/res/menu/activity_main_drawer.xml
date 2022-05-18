@@ -32,10 +32,6 @@
             android:id="@+id/nav_preguntasFrecuentes"
             android:icon="@drawable/ic_baseline_enterprise_24"
             android:title="Acerca de" />
-<!--        <item-->
-<!--            android:id="@+id/nav_cerrarSesion"-->
-<!--            android:icon="@drawable/ic_baseline_power_settings_new_24"-->
-<!--            android:title="@string/menu_cerrar_sesion" />-->
 
     </group>
 </menu>

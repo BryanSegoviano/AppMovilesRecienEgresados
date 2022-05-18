@@ -18,7 +18,6 @@ class AdaptadorEmpleos: BaseAdapter {
 
     lateinit var context: Context
     val database = Firebase.database
-    val empleosBD = database.getReference("empleos")
 
     var empleos: ArrayList<Empleo> = ArrayList()
     constructor(context: Context, empleos: ArrayList<Empleo>){
@@ -59,7 +58,7 @@ class AdaptadorEmpleos: BaseAdapter {
             intent.putExtra("horario", empleo.horario)
             intent.putExtra("descripcion", empleo.descripcion)
             intent.putExtra("sueldo", empleo.sueldo)
-
+            intent.putExtra("empresa", empleo.empresa)
             intent.putExtra("logo", empleo.img)
             this.context.startActivity(intent)
         }

@@ -22,6 +22,7 @@ class publicar_empleo : AppCompatActivity() {
         auth = Firebase.auth
         val database = Firebase.database
         val myRef = database.getReference("empleos")
+        val empresasDB = database.getReference("empresas")
 
         val btnRegresar = findViewById<Button>(R.id.btnVuelve)
         val btnFinalizar = findViewById<Button>(R.id.btnFinalizarCv)
@@ -34,6 +35,13 @@ class publicar_empleo : AppCompatActivity() {
         val etdescripcion = findViewById<EditText>(R.id.txtDescripcion)
         val etsueldo = findViewById<EditText>(R.id.txtSueldo)
 
+        val empresa = auth.currentUser
+        var nombre: String = ""
+        empresasDB.child(empresa?.uid.toString()).get().addOnSuccessListener {
+            if (it.exists()) {
+                nombre = it.child("nombre").value.toString()
+            }
+        }
 
         btnFinalizar.setOnClickListener {
             var puesto: String = etpuesto.text.toString().trim()
@@ -56,8 +64,9 @@ class publicar_empleo : AppCompatActivity() {
                 myRef.child(puesto).child("horario").setValue(horario)
                 myRef.child(puesto).child("descripcion").setValue(descripcion)
                 myRef.child(puesto).child("sueldo").setValue(sueldo)
+                myRef.child(puesto).child("empresa").setValue(nombre)
             }
-            Toast.makeText(this, "¡SU EMPLEO SE POSTULO CORRECTAMENTE!", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "¡VACANTE POSTULADA!", Toast.LENGTH_LONG).show()
             val intent: Intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }

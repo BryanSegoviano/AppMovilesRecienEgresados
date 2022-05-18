@@ -21,10 +21,6 @@ class GalleryFragment : Fragment() {
     var empleos: ArrayList<Empleo> = ArrayList()
     private var _binding: FragmentGalleryBinding? = null
 
-    private val auth = Firebase.auth
-    val database = Firebase.database
-    val empleosDB = database.getReference("empleos")
-
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!

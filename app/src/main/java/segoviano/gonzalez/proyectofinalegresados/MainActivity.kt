@@ -73,14 +73,23 @@ class MainActivity : AppCompatActivity() {
         val usuario = auth.currentUser
         val database = Firebase.database
         val myRef = database.getReference("usuarios")
+        val empresasBD = database.getReference("empresas")
         this.llenadoEmpleos(database)
 
         if (usuario != null) {
             myRef.child(usuario?.uid.toString()).get().addOnSuccessListener {
                 if (it.exists()) {
                     var nombre = it.child("nombre").value
-                    val textoBienvenida = "¡Bienvenido usuario!\n$nombre"
+                    val textoBienvenida = "¡Bienvenido\n$nombre!"
                     txtUsuario.text = textoBienvenida
+                }else{
+                    empresasBD.child(usuario?.uid.toString()).get().addOnSuccessListener {
+                        if (it.exists()) {
+                            var nombre = it.child("nombre").value
+                            val textoBienvenida = "¡Bienvenido\n$nombre!"
+                            txtUsuario.text = textoBienvenida
+                        }
+                    }
                 }
             }
         }
@@ -130,7 +139,7 @@ class MainActivity : AppCompatActivity() {
                             var horario = it.child("horario").value.toString()
                             var descripcion = it.child("descripcion").value.toString()
                             var sueldo = it.child("sueldo").value.toString()
-                            var empresa = empleosDB.child("google").key.toString()
+                            var empresa = it.child("empresa").value.toString()
 
                             val empleo1 = Empleo(
                                 1,
@@ -159,7 +168,6 @@ class MainActivity : AppCompatActivity() {
 
         usuariosBD.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                for (postSnapshot in dataSnapshot.children) {
                     usuariosBD.child(usuario?.uid.toString()).get().addOnSuccessListener {
                         for (empleo in listaEmpleos) {
                             //si es diferente de null que lo guarde en la lista
@@ -169,12 +177,11 @@ class MainActivity : AppCompatActivity() {
                             }
                         }
                     }
-                }//
             }
-
             override fun onCancelled(databaseError: DatabaseError) {
                 Log.v("TAG", "errrrrrrrrrrrrorrrrrrrrr")
             }
         })
+
     }
 }
