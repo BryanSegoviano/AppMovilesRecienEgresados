@@ -55,7 +55,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/txtPuesto"
         android:layout_width="310dp"
         android:layout_height="43dp"
         android:layout_marginTop="20dp"
@@ -70,7 +70,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/txtExperiencia"
         android:padding="8dp"
         android:layout_width="147dp"
         android:layout_height="43dp"
@@ -81,10 +81,10 @@
         android:hint="Experiencia..."
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+        app:layout_constraintTop_toBottomOf="@+id/txtPuesto" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName6"
+        android:id="@+id/txtPuestoUbicacion"
         android:padding="8dp"
         android:layout_width="147dp"
         android:layout_height="43dp"
@@ -94,11 +94,11 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.289"
-        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName4"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+        app:layout_constraintStart_toEndOf="@+id/txtExperiencia"
+        app:layout_constraintTop_toBottomOf="@+id/txtPuesto" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName7"
+        android:id="@+id/txtRequisitos"
         android:layout_width="310dp"
         android:layout_height="109dp"
         android:layout_marginTop="20dp"
@@ -109,10 +109,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName6" />
+        app:layout_constraintTop_toBottomOf="@+id/txtPuestoUbicacion" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName9"
+        android:id="@+id/txtHorario"
         android:layout_width="310dp"
         android:layout_height="43dp"
         android:layout_marginTop="20dp"
@@ -123,10 +123,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.524"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName7" />
+        app:layout_constraintTop_toBottomOf="@+id/txtRequisitos" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName11"
+        android:id="@+id/txtDescripcion"
         android:layout_width="310dp"
         android:layout_height="93dp"
         android:layout_marginTop="20dp"
@@ -138,7 +138,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.524"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName9" />
+        app:layout_constraintTop_toBottomOf="@+id/txtHorario" />
 
     <Button
         android:id="@+id/btnFinalizar"
@@ -152,10 +152,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.94"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName15" />
+        app:layout_constraintTop_toBottomOf="@+id/txtSueldo" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName15"
+        android:id="@+id/txtSueldo"
         android:layout_width="310dp"
         android:layout_height="43dp"
         android:layout_marginTop="20dp"
@@ -167,7 +167,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.544"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName11" />
+        app:layout_constraintTop_toBottomOf="@+id/txtDescripcion" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
