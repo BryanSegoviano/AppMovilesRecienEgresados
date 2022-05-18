@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import segoviano.gonzalez.proyectofinalegresados.R
 import segoviano.gonzalez.proyectofinalegresados.activity_empleo
 import segoviano.gonzalez.proyectofinalegresados.ui.Empleo
@@ -15,6 +17,9 @@ import segoviano.gonzalez.proyectofinalegresados.ui.Empleo
 class AdaptadorEmpleos: BaseAdapter {
 
     lateinit var context: Context
+    val database = Firebase.database
+    val empleosBD = database.getReference("empleos")
+
     var empleos: ArrayList<Empleo> = ArrayList()
     constructor(context: Context, empleos: ArrayList<Empleo>){
         this.context = context
@@ -46,6 +51,7 @@ class AdaptadorEmpleos: BaseAdapter {
 
         vista.setOnClickListener{
             val intent: Intent = Intent(this.context, activity_empleo::class.java)
+
             intent.putExtra("puesto", empleo.puesto)
             intent.putExtra("experiencia", empleo.experiencia)
             intent.putExtra("ubicacion", empleo.ubicacion)

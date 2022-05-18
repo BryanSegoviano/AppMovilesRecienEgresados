@@ -17,6 +17,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import segoviano.gonzalez.proyectofinalegresados.databinding.ActivityMainBinding
 
@@ -55,13 +56,24 @@ class MainActivity : AppCompatActivity() {
         var btnPublicarEmpleo = findViewById<Button>(R.id.buttonPublicarEmpleo)
         var btnCerrarSesion = findViewById<Button>(R.id.btnCerrarSesion)
         var txtUsuario = findViewById<TextView>(R.id.txtUsuario)
+
         auth = Firebase.auth
         val usuario = auth.currentUser
 
+        val database = Firebase.database
+        val myRef = database.getReference("usuarios")
         if(usuario != null){
-            val textoBienvenida = "¡Bienvenido usuario!\n" + usuario.email
-            txtUsuario.text = textoBienvenida
+        myRef.child(usuario?.uid.toString()).get().addOnSuccessListener {
+            if(it.exists()){
+                var nombre = it.child("nombre").value
+                val textoBienvenida = "¡Bienvenido usuario!\n$nombre"
+                txtUsuario.text = textoBienvenida
+                }
+            }
         }
+
+
+
 
         btnCrearCV.setOnClickListener {
             val intent: Intent = Intent(this, crear_cv::class.java)

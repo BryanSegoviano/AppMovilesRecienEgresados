@@ -7,9 +7,16 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import segoviano.gonzalez.proyectofinalegresados.ui.gallery.GalleryFragment
 
 class activity_empleo : AppCompatActivity() {
+
+    private lateinit var auth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_empleo)
@@ -50,6 +57,13 @@ class activity_empleo : AppCompatActivity() {
         }
 
         btnPostular.setOnClickListener {
+            auth = Firebase.auth
+            val database = Firebase.database
+            val usuario = auth.currentUser
+            val myRef = database.getReference("usuarios")
+            var puesto : String = bundle!!.getString("puesto", "")
+            myRef.child(usuario?.uid.toString()).child("postulaciones").setValue(puesto.toString().trim())
+
             Toast.makeText(this, "¡POSTULADO CORRECTAMENTE!", Toast.LENGTH_LONG).show()
             finish()
         }
