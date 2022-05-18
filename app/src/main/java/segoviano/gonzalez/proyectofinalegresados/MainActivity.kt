@@ -2,6 +2,7 @@ package segoviano.gonzalez.proyectofinalegresados
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.View
 import android.widget.Button
@@ -20,6 +21,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
@@ -27,6 +29,11 @@ import segoviano.gonzalez.proyectofinalegresados.databinding.ActivityMainBinding
 import segoviano.gonzalez.proyectofinalegresados.ui.Empleo
 
 class MainActivity : AppCompatActivity() {
+
+    companion object {
+        var listaEmpleos: ArrayList<Empleo> = ArrayList()
+        var listaEmpleosPostulados: ArrayList<Empleo> = ArrayList()
+    }
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
@@ -64,16 +71,16 @@ class MainActivity : AppCompatActivity() {
 
         auth = Firebase.auth
         val usuario = auth.currentUser
-
         val database = Firebase.database
         val myRef = database.getReference("usuarios")
+        this.llenadoEmpleos(database)
 
-        if(usuario != null){
-        myRef.child(usuario?.uid.toString()).get().addOnSuccessListener {
-            if(it.exists()){
-                var nombre = it.child("nombre").value
-                val textoBienvenida = "¡Bienvenido usuario!\n$nombre"
-                txtUsuario.text = textoBienvenida
+        if (usuario != null) {
+            myRef.child(usuario?.uid.toString()).get().addOnSuccessListener {
+                if (it.exists()) {
+                    var nombre = it.child("nombre").value
+                    val textoBienvenida = "¡Bienvenido usuario!\n$nombre"
+                    txtUsuario.text = textoBienvenida
                 }
             }
         }
@@ -100,10 +107,74 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
-
-
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+
+    fun llenadoEmpleos(database: FirebaseDatabase) {
+        listaEmpleos.clear()
+        listaEmpleosPostulados.clear()
+        val empleosDB = database.getReference("empleos")
+        val usuariosBD = database.getReference("usuarios")
+
+        empleosDB.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                for (postSnapshot in dataSnapshot.children) {
+                    empleosDB.child(postSnapshot.key.toString()).get().addOnSuccessListener {
+                        if (it.exists()) {
+                            var puesto = it.child("puesto").value.toString()
+                            var experiencia = it.child("experiencia").value.toString()
+                            var ubicacion = it.child("ubicacion").value.toString()
+                            var requisitos = it.child("requisitos").value.toString()
+                            var horario = it.child("horario").value.toString()
+                            var descripcion = it.child("descripcion").value.toString()
+                            var sueldo = it.child("sueldo").value.toString()
+                            var empresa = empleosDB.child("google").key.toString()
+
+                            val empleo1 = Empleo(
+                                1,
+                                R.drawable.iconozerexp,
+                                puesto,
+                                experiencia,
+                                ubicacion,
+                                requisitos,
+                                horario,
+                                descripcion,
+                                sueldo.toFloat(),
+                                empresa
+                            )
+                            listaEmpleos.add(empleo1)
+                        }
+                    }
+                }
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+                Log.v("TAG", "loadPost:onCancelled", databaseError.toException())
+            }
+        })
+
+        val usuario = auth.currentUser
+
+        usuariosBD.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                for (postSnapshot in dataSnapshot.children) {
+                    usuariosBD.child(usuario?.uid.toString()).get().addOnSuccessListener {
+                        for (empleo in listaEmpleos) {
+                            //si es diferente de null que lo guarde en la lista
+                            val postulacion = it.child("postulaciones").child(empleo.puesto).value.toString()
+                            if (postulacion != "null") {
+                                listaEmpleosPostulados.add(empleo)
+                            }
+                        }
+                    }
+                }//
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+                Log.v("TAG", "errrrrrrrrrrrrorrrrrrrrr")
+            }
+        })
     }
 }

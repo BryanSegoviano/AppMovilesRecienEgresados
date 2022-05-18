@@ -18,8 +18,8 @@
             android:title="@string/menu_postulaciones" />
         <item
             android:id="@+id/nav_nuevasVacantes"
-            android:icon="@drawable/ic_baseline_new_releases_24"
-            android:title="@string/menu_nuevas_vacantes" />
+            android:icon="@drawable/ic_baseline_help_24"
+            android:title="@string/menu_preguntas_frecuentes" />
         <item
             android:id="@+id/nav_empleosDestacados"
             android:icon="@drawable/ic_baseline_email_24"
@@ -30,12 +30,12 @@
             android:title="@string/menu_favoritos" />
         <item
             android:id="@+id/nav_preguntasFrecuentes"
-            android:icon="@drawable/ic_baseline_help_24"
-            android:title="@string/menu_preguntas_frecuentes" />
-        <item
-            android:id="@+id/nav_cerrarSesion"
-            android:icon="@drawable/ic_baseline_power_settings_new_24"
-            android:title="@string/menu_cerrar_sesion" />
+            android:icon="@drawable/ic_baseline_enterprise_24"
+            android:title="Acerca de" />
+<!--        <item-->
+<!--            android:id="@+id/nav_cerrarSesion"-->
+<!--            android:icon="@drawable/ic_baseline_power_settings_new_24"-->
+<!--            android:title="@string/menu_cerrar_sesion" />-->
 
     </group>
 </menu>

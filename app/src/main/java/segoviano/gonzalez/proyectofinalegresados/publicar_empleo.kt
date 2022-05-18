@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.ktx.database
@@ -56,6 +57,7 @@ class publicar_empleo : AppCompatActivity() {
                 myRef.child(puesto).child("descripcion").setValue(descripcion)
                 myRef.child(puesto).child("sueldo").setValue(sueldo)
             }
+            Toast.makeText(this, "¡SU EMPLEO SE POSTULO CORRECTAMENTE!", Toast.LENGTH_LONG).show()
             val intent: Intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }

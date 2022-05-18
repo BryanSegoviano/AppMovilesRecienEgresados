@@ -65,12 +65,14 @@ class activity_empleo : AppCompatActivity() {
             val usuario = auth.currentUser
             val myRef = database.getReference("usuarios")
             var puesto : String = bundle!!.getString("puesto", "")
-            myRef.child(usuario?.uid.toString()).child("postulaciones").push().setValue(puesto.toString().trim())
-            Toast.makeText(this, "¡POSTULADO CORRECTAMENTE!", Toast.LENGTH_LONG).show()
+            myRef.child(usuario?.uid.toString()).child("postulaciones").child(puesto.toString().trim()).push().setValue(puesto.toString().trim())
+            Toast.makeText(this, "¡SE HA POSTULADO CORRECTAMENTE!", Toast.LENGTH_LONG).show()
             finish()
         }
+
         btnVolver.setOnClickListener {
-            finish()
+            val intent: Intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
 
     }

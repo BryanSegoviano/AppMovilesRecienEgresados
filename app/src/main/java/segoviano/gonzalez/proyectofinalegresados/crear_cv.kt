@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.ktx.database
@@ -65,6 +66,7 @@ class crear_cv : AppCompatActivity() {
                 myRef.child(usuario?.uid.toString()).child("curriculum").child("habilidades").setValue(habilidades)
                 myRef.child(usuario?.uid.toString()).child("curriculum").child("idiomas").setValue(idiomas)
             }
+            Toast.makeText(this, "¡CURRICULUM GUARDADO CORRECTAMENTE!", Toast.LENGTH_LONG).show()
             val intent: Intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
